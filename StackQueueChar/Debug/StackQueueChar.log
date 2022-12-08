@@ -1,6 +1,22 @@
 ﻿  Components.cpp
   GameObjects.cpp
-  main.cpp
   Scenes.cpp
+  main.cpp
   코드를 생성하고 있습니다...
-  StackQueueChar.vcxproj -> F:\Github Project\StackAndQueue\Debug\StackQueueChar.exe
+ConsoleEngineDebug.lib(Color.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Color.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Component.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Component.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Debug.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Debug.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Components.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Components.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(GameObjects.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(GameObjects.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(ConsoleEngine.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(ConsoleEngine.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(GameObject.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(GameObject.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Graphic.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Graphic.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Keyboard.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Keyboard.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Math.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Math.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Matrix.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Matrix.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Scene.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Scene.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(SceneManager.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(SceneManager.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Sprite.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Sprite.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Time.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Time.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineDebug.lib(Vector.obj) : warning LNK4099: '' PDB를 'ConsoleEngineDebug.lib(Vector.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  StackQueueChar.vcxproj -> C:\Users\My\Documents\Unity Project\MojackJam\StackAndQueue\Debug\StackQueueChar.exe

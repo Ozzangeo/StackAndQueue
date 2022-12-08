@@ -78,11 +78,14 @@ namespace nComponent {
 		std::chrono::system_clock::time_point start;
 
 		const int MAX_SIZE = 8;
+		const wstring resultPath = L"result.txt";
+		float bestTime = 0.0f;
 		float time = 0.0f;
 
 		bool isSetup = false;
 		bool isDownKey = false;
 		bool choice = false;
+		bool isWrite = false;
 
 		void Start() override;
 		void Update() override;

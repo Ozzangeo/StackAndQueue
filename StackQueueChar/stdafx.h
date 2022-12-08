@@ -10,7 +10,9 @@
 
 #include <stack>
 #include <queue>
+
 #include <ctime>
 #include <algorithm>
+#include <sstream>
 
 #endif // !__STDAFX__

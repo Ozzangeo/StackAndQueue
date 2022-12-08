@@ -1,5 +1,6 @@
 #include "Components.h"
 
+using namespace std;
 using namespace Components;
 using namespace nComponent;
 
@@ -95,6 +96,26 @@ void System::Start() {
 	text = scene->GetGameObject<nGameObject::TextObject>(Tag_Text)->GetComponent<Text>();
 	audio = gameobject->AddComponent<Audio>();
 
+	wifstream file(resultPath);
+
+	wstring text;
+	getline(file, text);
+	wstringstream ss(text);
+
+	getline(ss, text, L':');
+	getline(ss, text, L':');
+
+	try
+	{
+		bestTime = (stoi(text) << 16) * 0.000001f;
+	}
+	catch (exception e)
+	{
+		bestTime = 100.0f;
+	}
+
+	file.close();
+
 	audio->LoadAudio("Music/pop.mp3");
 	audio->LoadAudio("Music/push.mp3");
 	audio->LoadAudio("Music/background.mp3");
@@ -112,7 +133,18 @@ void System::Update() {
 
 	if (text->targetText == text->text) {
 		graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초");
+
+		if (time < bestTime && !isWrite) {
+			wofstream file(resultPath);
+
+			file << L"BestTime:" << to_wstring(static_cast<int>(time * 1000000) >> 16) << L"초";
+
+			file.close();
+			isWrite = true;
+		}
+		
 		if (keyboard.isKeyDown(KeyCode_ESC)) { manager->StopEngine(); }
+		if (keyboard.isKeyDown(KeyCode_F5)) { manager->ChangeScene<nScene::STACKQUEUE>(); }
 	}
 	else {
 		if (choice) { graphic.Text({ 10, 12, 0 }, L'^'); }
@@ -174,6 +206,7 @@ void System::Update() {
 		time = duration<float>(std::chrono::system_clock::now() - start).count();
 		graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초");
 	}
+	graphic.Text(Vector3f(-48, 12, 0), L"최고기록:" + to_wstring(bestTime) + L"초");
 }
 
 void System::Remove()
