@@ -4,6 +4,11 @@
 #include "Components.h"
 
 namespace nGameObject {
+	class NullObject : public GameObject {
+	private:
+		void Components() override {}
+	};
+
 	class StackBar : public GameObject {
 	private:
 		void Components() override;

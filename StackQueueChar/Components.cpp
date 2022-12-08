@@ -119,6 +119,7 @@ void System::Start() {
 	audio->LoadAudio("Music/pop.mp3");
 	audio->LoadAudio("Music/push.mp3");
 	audio->LoadAudio("Music/background.mp3");
+	audio->LoadAudio("Music/newRecord.mp3");
 	audio->PlayAudio(3, true);
 
 	start = std::chrono::system_clock::now();
@@ -132,9 +133,16 @@ void System::Update() {
 	}
 
 	if (text->targetText == text->text) {
-		graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초");
+		if (isWrite) {
+			graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초", Color_Red + 15);
+		}
+		else {
+			graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초");
+		}
 
 		if (time < bestTime && !isWrite) {
+			audio->PlayAudio(4);
+
 			wofstream file(resultPath);
 
 			file << L"BestTime:" << to_wstring(static_cast<int>(time * 1000000) >> 16) << L"초";
@@ -143,8 +151,22 @@ void System::Update() {
 			isWrite = true;
 		}
 		
-		if (keyboard.isKeyDown(KeyCode_ESC)) { manager->StopEngine(); }
-		if (keyboard.isKeyDown(KeyCode_F5)) { manager->ChangeScene<nScene::STACKQUEUE>(); }
+		if (keyboard.isKeyDown(KeyCode_ESC)) {
+			audio->CloseAudio(1);
+			audio->CloseAudio(2);
+			audio->CloseAudio(3);
+			audio->CloseAudio(4);
+
+			manager->StopEngine();
+		}
+		/*if (keyboard.isKeyDown(KeyCode_F5)) {
+			audio->CloseAudio(1);
+			audio->CloseAudio(2);
+			audio->CloseAudio(3);
+			audio->CloseAudio(4);
+
+			manager->ChangeScene<nScene::STACKQUEUE>();
+		}*/
 	}
 	else {
 		if (choice) { graphic.Text({ 10, 12, 0 }, L'^'); }
@@ -209,9 +231,4 @@ void System::Update() {
 	graphic.Text(Vector3f(-48, 12, 0), L"최고기록:" + to_wstring(bestTime) + L"초");
 }
 
-void System::Remove()
-{
-	audio->CloseAudio(1);
-	audio->CloseAudio(2);
-	audio->CloseAudio(3);
-}
+void System::Remove() {}

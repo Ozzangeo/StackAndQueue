@@ -1,10 +1,1 @@
-﻿  Components.cpp
-  GameObjects.cpp
-  Scenes.cpp
-  main.cpp
-  코드를 생성하고 있습니다.
-  0 of 847 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  코드를 생성했습니다.
-  StackQueueChar.vcxproj -> C:\Users\My\source\repos\StackQueueChar\Release\StackQueueChar.exe
+﻿  StackQueueChar.vcxproj -> F:\Github Project\StackAndQueue\Release\StackQueueChar.exe

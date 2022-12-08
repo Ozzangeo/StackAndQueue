@@ -42,16 +42,18 @@ inline void SceneManager::ChangeScene() {
 	if (nowScene) {
 		nowScene->isEnd = true;
 
-		// 만약 이전 씬이 할당되어있다면
-		if (beforeScene) {
-			// 이전 씬이 다 끝날 때 까지 기다리기
-			while (!beforeScene->isDone) {}
+		thread([&]() {
+			// 만약 이전 씬이 할당되어있다면
+			if (beforeScene) {
+				// 이전 씬이 다 끝날 때 까지 기다리기
+				while (!beforeScene->isDone) {}
 
-			beforeScene->Release();
-			delete beforeScene; beforeScene = nullptr;
-		}
+				beforeScene->Release();
+				delete beforeScene; beforeScene = nullptr;
+			}
 
 		beforeScene = nowScene;
+		}).detach();
 	}
 	
 	nowScene = new T;

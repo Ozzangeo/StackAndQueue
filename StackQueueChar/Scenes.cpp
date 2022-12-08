@@ -16,6 +16,7 @@ void STACKQUEUE::Work() {
 	color.SetColor({ 0x6F, 0x90, 0x3A }, 1);
 	color.SetColor({ 0x4D, 0xA5, 0xA7 }, 2);
 	color.SetColor({ 0x2C, 0x43, 0x1E }, 3);
+	color.SetColor({ 0xB6, 0xD2, 0xBB }, 4);
 
 	color.SetColor({ 255, 255, 255 }, 15);
 
