@@ -9,7 +9,7 @@ private:
 	static bool isEnd;
 
 	Scene* nowScene = nullptr;
-	Scene* beforeScene = nullptr;
+	Scene* AfterScene = nullptr;
 
 	SceneManager() {}
 	SceneManager(const SceneManager& ref) {}
@@ -40,24 +40,14 @@ inline bool SceneManager::isRunning() {
 template<typename T, enable_if_t<is_base_of_v<Scene, T>, bool>>
 inline void SceneManager::ChangeScene() {
 	if (nowScene) {
+		AfterScene = new T;
+		AfterScene->Awake();
 		nowScene->isEnd = true;
-
-		thread([&]() {
-			// 만약 이전 씬이 할당되어있다면
-			if (beforeScene) {
-				// 이전 씬이 다 끝날 때 까지 기다리기
-				while (!beforeScene->isDone) {}
-
-				beforeScene->Release();
-				delete beforeScene; beforeScene = nullptr;
-			}
-
-		beforeScene = nowScene;
-		}).detach();
 	}
-	
-	nowScene = new T;
-	nowScene->Awake();
+	else {
+		nowScene = new T;
+		nowScene->Awake();
+	}
 }
 
 #endif // !___SCENEMANAGER___

@@ -52,6 +52,8 @@ public:
 	template<typename T, enable_if_t<is_base_of_v<GameObject, T>, bool> = true> bool RemoveGameObject(wstring name);
 	template<typename T, enable_if_t<is_base_of_v<GameObject, T>, bool> = true> bool RemoveGameObject(int tag);
 	template<typename T, enable_if_t<is_base_of_v<GameObject, T>, bool> = true> bool RemoveGameObject(wstring name, int tag);
+
+	void Clear();
 };
 template<typename T, enable_if_t<is_base_of_v<GameObject, T>, bool>> inline T* Scene::AddGameObject(wstring name, int tag) {
 	GameObject* GameObject = GetGameObject<T>();
@@ -155,6 +157,13 @@ inline bool Scene::RemoveGameObject(GameObject* gameobject) {
 		}
 	}
 	return false;
+}
+inline void Scene::Clear()
+{
+	for (auto& item : m_GameObjects) {
+		m_RemoveObjectList.push_back(item);
+	}
+	m_GameObjects.clear();
 }
 template<typename T, enable_if_t<is_base_of_v<GameObject, T>, bool>> inline bool Scene::RemoveGameObject() {
 	list<T*> gameobjects = GetGameObjectList<T>();

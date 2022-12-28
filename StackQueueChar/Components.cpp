@@ -15,11 +15,6 @@ void StackBar::Update() {
 	graphic.Text(*gameobject->pos + Vector3f(-1, 1, 0), text);
 	graphic.Text(*gameobject->pos + Vector3f(-2, (static_cast<float>(count) * -2.0f) + 1, 0), L"stack");
 }
-void StackBar::Remove() {
-	for (auto* bar : bars) {
-		if (bar) { delete bar; bar = nullptr; }
-	}
-}
 void StackBar::SetSize(int size) {
 	if (size < 0) { return; }
 	for (auto* bar : bars) {
@@ -39,17 +34,14 @@ void StackBar::SetSize(int size) {
 	}
 	count = size;
 }
+void StackBar::Remove() {}
 
 void QueueBar::Update() {
 	wstring text = to_wstring(texts.size()) + L"/" + to_wstring(count);
 	graphic.Text(*gameobject->pos + Vector3f(-1, 1, 0), text);
 	graphic.Text(*gameobject->pos + Vector3f(-2, (static_cast<float>(count) * -2.0f) + 1, 0), L"queue");
 }
-void QueueBar::Remove() {
-	for (auto* bar : bars) {
-		if (bar) { delete bar; bar = nullptr; }
-	}
-}
+void QueueBar::Remove() {}
 void QueueBar::SetSize(int size) {
 	if (size < 0) { return; }
 	for (auto* bar : bars) {
@@ -105,14 +97,8 @@ void System::Start() {
 	getline(ss, text, L':');
 	getline(ss, text, L':');
 
-	try
-	{
-		bestTime = (stoi(text) << 16) * 0.000001f;
-	}
-	catch (exception e)
-	{
-		bestTime = 100.0f;
-	}
+	try { bestTime = (stoi(text) << 16) * 0.000001f; }
+	catch (exception e) { bestTime = 100.0f; }
 
 	file.close();
 
@@ -120,55 +106,45 @@ void System::Start() {
 	audio->LoadAudio("Music/push.mp3");
 	audio->LoadAudio("Music/background.mp3");
 	audio->LoadAudio("Music/newRecord.mp3");
-	audio->PlayAudio(3, true);
-
-	start = std::chrono::system_clock::now();
 }
 void System::Update() {
-	if (!isSetup) {
+	if (!isSetup && keyboard.isKeyDown(KeyCode_ENTER)) {
 		stackBar->SetSize(MAX_SIZE);
 		queueBar->SetSize(MAX_SIZE);
+		
+		start = std::chrono::system_clock::now();
+		audio->PlayAudio(3, true);
 
 		isSetup = true;
 	}
 
-	if (text->targetText == text->text) {
-		if (isWrite) {
-			graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초", Color_Red + 15);
-		}
-		else {
-			graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초");
-		}
+	if (keyboard.isKeyDown(KeyCode_ESC)) {
+		audio->CloseAudio(1);
+		audio->CloseAudio(2);
+		audio->CloseAudio(3);
+		audio->CloseAudio(4);
 
-		if (time < bestTime && !isWrite) {
+		manager->StopEngine();
+	}
+	if (keyboard.isKeyDown(KeyCode_F5)) { manager->ChangeScene<nScene::STACKQUEUE>(); }
+
+	if (text->targetText == text->text) {
+		if (isWrite) { graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초", Color_Red + 15); }
+		else { graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초"); }
+
+		if ((time < bestTime && !isWrite) || bestTime == 0.0f) {
 			audio->PlayAudio(4);
 
 			wofstream file(resultPath);
 
-			file << L"BestTime:" << to_wstring(static_cast<int>(time * 1000000) >> 16) << L"초";
+			file << L"최고기록:" << to_wstring(static_cast<int>(time * 1000000) >> 16) << L"초";
 
 			file.close();
 			isWrite = true;
 		}
-		
-		if (keyboard.isKeyDown(KeyCode_ESC)) {
-			audio->CloseAudio(1);
-			audio->CloseAudio(2);
-			audio->CloseAudio(3);
-			audio->CloseAudio(4);
-
-			manager->StopEngine();
-		}
-		/*if (keyboard.isKeyDown(KeyCode_F5)) {
-			audio->CloseAudio(1);
-			audio->CloseAudio(2);
-			audio->CloseAudio(3);
-			audio->CloseAudio(4);
-
-			manager->ChangeScene<nScene::STACKQUEUE>();
-		}*/
 	}
-	else {
+	else if(isSetup) {
+		
 		if (choice) { graphic.Text({ 10, 12, 0 }, L'^'); }
 		else { graphic.Text({ -10, 12, 0 }, L'^'); }
 
@@ -229,6 +205,11 @@ void System::Update() {
 		graphic.Text(Vector3f(-48, 13, 0), L"진행시간:" + to_wstring(time) + L"초");
 	}
 	graphic.Text(Vector3f(-48, 12, 0), L"최고기록:" + to_wstring(bestTime) + L"초");
+	graphic.Text(Vector3f(-48, -14, 0), L"LEFT(A) or RIGHT(D) : 자료구조 전환");
+	graphic.Text(Vector3f(-48, -13, 0), L"DOWN(S, SPACE) : Push");
+	graphic.Text(Vector3f(-48, -12, 0), L"UP(W) : Pop");
+	graphic.Text(Vector3f(-48, -11, 0), L"ENTER : 시작");
+	graphic.Text(Vector3f(-48, -10, 0), L"F5 : 재시작");
 }
 
 void System::Remove() {}

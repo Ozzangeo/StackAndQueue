@@ -39,9 +39,9 @@ void TextObject::Work() {
 
 	switch (rand() % 4)
 	{
-	case 0:	{ text->SetText(L"queue is free!");   } break;
-	case 1:	{ text->SetText(L"stack is free!");   } break;
-	case 2:	{ text->SetText(L"doby is free!");    } break;
+	case 0:	{ text->SetText(L"queues are full!"); } break;
+	case 1:	{ text->SetText(L"stacks are empty"); } break;
+	case 2:	{ text->SetText(L"doby is freedom!"); } break;
 	case 3: { text->SetText(L"stack and queue!"); } break;
 	}
 }

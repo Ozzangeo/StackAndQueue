@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackAndQueue!", "StackQueueChar\StackQueueChar.vcxproj", "{471F806D-1E3C-4A10-86C5-9AB5C8E47433}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "StackAndQueueSetup", "StackAndQueueSetup\StackAndQueueSetup.vdproj", "{129FA06D-DA31-46FE-AA5C-9B0DA5509008}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Debug|x64.ActiveCfg = Debug|x64
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Debug|x64.Build.0 = Debug|x64
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Debug|x86.ActiveCfg = Debug|Win32
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Debug|x86.Build.0 = Debug|Win32
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Release|x64.ActiveCfg = Release|x64
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Release|x64.Build.0 = Release|x64
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Release|x86.ActiveCfg = Release|Win32
+		{471F806D-1E3C-4A10-86C5-9AB5C8E47433}.Release|x86.Build.0 = Release|Win32
+		{129FA06D-DA31-46FE-AA5C-9B0DA5509008}.Debug|x64.ActiveCfg = Debug
+		{129FA06D-DA31-46FE-AA5C-9B0DA5509008}.Debug|x86.ActiveCfg = Debug
+		{129FA06D-DA31-46FE-AA5C-9B0DA5509008}.Release|x64.ActiveCfg = Release
+		{129FA06D-DA31-46FE-AA5C-9B0DA5509008}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44EB2D26-844A-42C4-AB34-B2BFC7F04734}
+	EndGlobalSection
+EndGlobal
