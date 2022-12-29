@@ -7,4 +7,20 @@
   Previous IPDB not found, fall back to full compilation.
   All 1294 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   코드를 생성했습니다.
-  StackQueueChar.vcxproj -> F:\Github Project\StackAndQueue\Release\StackAndQueue!.exe
+ConsoleEngineRelease.lib(Components.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Components.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Color.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Color.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(SceneManager.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(SceneManager.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Scene.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Scene.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Graphic.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Graphic.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Keyboard.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Keyboard.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(GameObject.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(GameObject.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Vector.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Vector.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Component.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Component.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Time.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Time.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(ConsoleEngine.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(ConsoleEngine.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Debug.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Debug.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(GameObjects.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(GameObjects.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Matrix.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Matrix.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Math.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Math.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ConsoleEngineRelease.lib(Sprite.obj) : warning LNK4099: '' PDB를 'ConsoleEngineRelease.lib(Sprite.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  StackQueueChar.vcxproj -> C:\Users\My\Documents\GIthub Projects\StackAndQueue\Release\StackAndQueue!.exe
